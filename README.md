@@ -1,4 +1,3 @@
-Here's a professional and developer-friendly `README.md` file you can use for your [AuthClient](https://github.com/ralphcomplido/AuthClient.git) Angular + ASP.NET Core authentication app. It includes description, setup instructions, features, and technologies used.
 
 ---
 
