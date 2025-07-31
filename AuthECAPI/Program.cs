@@ -1,3 +1,4 @@
+using AuthECAPI.Extensions;
 using AuthECAPI.Models;
 using Azure.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,55 +17,25 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-builder.Services
-    .AddIdentityApiEndpoints<AppUser>()
-    .AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddAuthentication(x =>
-{
-    x.DefaultAuthenticateScheme = 
-    x.DefaultChallengeScheme = 
-    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(y =>
-{
-    y.SaveToken = false;
-    y.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:JWTSecret"]!))
-    };
-});
+
+builder.Services.AddSwaggerExplorer()
+    .InjectDbContext(builder.Configuration)
+    .AddIdentityHandlersaAndStores()
+    .AddIdentityAuth(builder.Configuration);
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-#region Config. CORS
-app.UseCors(options=>
-    options.WithOrigins("http://localhost:4200")
-    .AllowAnyMethod()
-    .AllowAnyHeader());
-#endregion
-
-
+app.ConfigureSwaggerExplorer()
+   .ConfigureCORS(builder.Configuration)
+   .AddIdentityAuthMiddlewares();
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
 
-app.UseAuthorization();
 
 app.MapControllers();
 
