@@ -12,7 +12,11 @@
 
         public static WebApplication ConfigureSwaggerExplorer(this WebApplication app)
         {
-
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
             return app;
         }
     }

@@ -342,7 +342,7 @@
     "/api/signup": {
       "post": {
         "tags": [
-          "AuthECAPI"
+          "IdentityUserEndpoints"
         ],
         "requestBody": {
           "content": {
@@ -364,7 +364,7 @@
     "/api/signin": {
       "post": {
         "tags": [
-          "AuthECAPI"
+          "IdentityUserEndpoints"
         ],
         "requestBody": {
           "content": {

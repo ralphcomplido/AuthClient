@@ -302,8 +302,8 @@
     ]
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__5",
+    "ContainingType": "AuthECAPI.Controllers.IdentityUserEndpoints",
+    "Method": "SignIn",
     "RelativePath": "api/signin",
     "HttpMethod": "POST",
     "IsController": false,
@@ -311,7 +311,7 @@
     "Parameters": [
       {
         "Name": "loginModel",
-        "Type": "LoginModel",
+        "Type": "AuthECAPI.Controllers.LoginModel",
         "IsRequired": true
       }
     ],
@@ -324,8 +324,8 @@
     ]
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
+    "ContainingType": "AuthECAPI.Controllers.IdentityUserEndpoints",
+    "Method": "CreateUser",
     "RelativePath": "api/signup",
     "HttpMethod": "POST",
     "IsController": false,
@@ -333,7 +333,7 @@
     "Parameters": [
       {
         "Name": "userRegistrationModel",
-        "Type": "UserRegistrationModel",
+        "Type": "AuthECAPI.Controllers.UserRegistrationModel",
         "IsRequired": true
       }
     ],
