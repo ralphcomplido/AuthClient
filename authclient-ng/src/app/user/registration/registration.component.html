@@ -1,6 +1,15 @@
-<div class="mb-4 h2 text-success">
-    Sign Up
+<div class="mb-4">
+    <h2 class="text-success">
+        Sign Up
+    </h2> 
 </div>
+
+<div class="">Already have an account?
+    <a routerLink="/signin" class="text-decoration-none fw-medium text-success d-inline-block">
+        Sign In
+    </a>
+</div>
+
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <input class="form-control bg-body-secondary" 
@@ -13,14 +22,15 @@
     <div class="mb-3">
         <input class="form-control bg-body-secondary" 
         placeholder="Email" formControlName="email">
-            <div class="error-feedback" *ngIf="hasDisplayError('email')">
-                <div *ngIf="form.controls.email.hasError('required')">
-                Please enter your email address.
-                </div>   
-                <div *ngIf="form.controls.email.hasError('email')">
-                    Please enter a valid email address.
-                </div>   
-            </div>
+
+        <div class="error-feedback" *ngIf="hasDisplayError('email')">
+            <div *ngIf="form.controls.email.hasError('required')">
+            Please enter your email address.
+            </div>   
+            <div *ngIf="form.controls.email.hasError('email')">
+                Please enter a valid email address.
+            </div>   
+        </div>
     </div>
 
     <div class="mb-3">

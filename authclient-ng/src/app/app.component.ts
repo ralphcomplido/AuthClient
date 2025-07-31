@@ -5,9 +5,8 @@ import { UserComponent } from './user/user.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,UserComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet, UserComponent],
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'AuthClient';
