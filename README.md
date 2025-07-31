@@ -1,12 +1,14 @@
 # AuthClient 🔐
 
-This is a full-stack authentication application built using **Angular** (frontend) and **ASP.NET Core Web API** (backend). It demonstrates user registration with password confirmation, validation feedback, and toast notifications using `ngx-toastr`.
+This is a full-stack authentication application built using **Angular** (frontend) and **ASP.NET Core Web API** (backend), with JWT-based authentication. It demonstrates user registration and login with password confirmation, validation feedback, and toast notifications using `ngx-toastr`.
 
 ---
 
 ## Features
 
-- ✅ User registration with full name, email, and password
+- 🔐 Secure JWT-based authentication with token storage and API protection
+
+- ✅ User registration and login with full name, email, and password
 - 🔒 Strong password rules (min length, symbol requirement)
 - 🔁 Password confirmation with custom validator
 - ⚠️ Form validation with user-friendly error messages
@@ -26,6 +28,7 @@ This is a full-stack authentication application built using **Angular** (fronten
 - Standalone Components
 
 **Backend:**
+- JWT token generation and validation
 
 - ASP.NET Core Web API
 - ASP.NET Identity
@@ -102,7 +105,8 @@ dotnet run
 src/
 ├── app/
 │   ├── user/
-│   │   └── registration/        <-- Registration component
+│   │   ├── registration/        <-- Registration component
+│   │   └── login/               <-- Login component
 │   ├── shared/
 │   │   ├── services/            <-- AuthService
 │   │   └── pipes/               <-- Custom pipes (e.g., FirstKeyPipe)
