@@ -1,0 +1,21 @@
+
+# Ignore Visual Studio and VS Code settings
+.vs/
+.vscode/
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore dependencies (optional if using node_modules)
+node_modules/
+
+# Ignore temporary or system files
+*.user
+*.suo
+*.cache
+*.log
+*.vsidx
+*.dll
+*.exe
+*.pdb

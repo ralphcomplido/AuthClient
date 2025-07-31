@@ -535,3 +535,4 @@ C:\Users\RALPH\ANGULAR\AuthClient\AuthECAPI\obj\Debug\net8.0\refint\AuthECAPI.dl
 C:\Users\RALPH\ANGULAR\AuthClient\AuthECAPI\obj\Debug\net8.0\AuthECAPI.pdb
 C:\Users\RALPH\ANGULAR\AuthClient\AuthECAPI\obj\Debug\net8.0\AuthECAPI.genruntimeconfig.cache
 C:\Users\RALPH\ANGULAR\AuthClient\AuthECAPI\obj\Debug\net8.0\ref\AuthECAPI.dll
+C:\Users\RALPH\ANGULAR\AuthClient\AuthECAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

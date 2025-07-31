@@ -360,6 +360,28 @@
           }
         }
       }
+    },
+    "/api/signin": {
+      "post": {
+        "tags": [
+          "AuthECAPI"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -473,6 +495,20 @@
           },
           "isEmailConfirmed": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginModel": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
